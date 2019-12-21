@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>显示男女</title>
+</head>
+<body>
+
+<hr>
+<div th:if="${sex=='F'}">
+   <!--满足条件显示-->
+   <span >这是一个男孩的图片</span><br>
+    <img th:src="${map.boy}" >
+</div>
+   <!--不满足显示-->
+<div th:unless="${sex=='F'}">
+    <span >这是一个女孩的图片</span><br>
+    <img th:src="${map.girl}" >
+</div>
+
+<div th:switch="${sex}">
+    <span th:case="F">男</span>
+    <span th:case="M">女</span>
+</div>
+
+</body>
+</html>

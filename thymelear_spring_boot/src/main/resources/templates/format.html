@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>格式化展示</title>
+</head>
+<body>
+
+<hr>
+    <div>
+        存款为：<span th:text="${#numbers.formatDecimal(money,1,2)}"></span>
+        生日为：<span th:text="${#dates.format(birthday,'yyyy-MM-dd HH:mm:ss')}"></span>
+        替换test文本<span th:text="${#strings.replace(replaceStr,'o','e')}"></span>
+        个人简介为：<div th:text="${#strings.abbreviate(infoDesc,20)}"></div>
+    </div>
+</body>
+</html>

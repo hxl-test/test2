@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymelear的入门小示例</title>
+</head>
+<body>
+
+<hr>
+    <!--${page.request.contextPath}-->
+    <a th:href="@{/addUser}"><button >添加用户</button></a>
+   <table width="400px" height="300px" border="1" align="center">
+       <tr>
+           <th>id</th>
+           <th>姓名</th>
+           <th>年龄</th>
+           <th>性别</th>
+       </tr>
+       <tr th:each="user :${users}">
+           <td th:text="${user.id}"></td>
+           <td th:text="${user.name}"></td>
+           <td th:text="${user.age}"></td>
+           <td th:text="${user.sex}"></td>
+       </tr>
+
+   </table>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymelear的入门小示例</title>
+</head>
+<body>
+    <h1 th:text="${name}"></h1>
+
+    <h1 th:text="#{title}"></h1>
+    <h3 th:text="#{message1}"></h3>
+    <h3 th:text="#{message2}"></h3>
+<hr>
+   对象数据的获取：
+    <span th:text="${user.id}"></span> <span th:text="${user.name}"></span>
+    div标签内提取user的所有属性<br>
+<div th:object="${user}">
+    <span th:text="*{id}"></span><br>
+    <span th:text="*{name}"></span><br>
+    <span th:text="*{age}"></span><br>
+    <span th:text="*{sex}"></span><br>
+</div>
+<hr>
+   <table width="400px" height="300px" border="1" align="center">
+       <tr>
+           <th>id</th>
+           <th>姓名</th>
+           <th>年龄</th>
+           <th>性别</th>
+       </tr>
+       <tr th:each="user :${users}">
+           <td th:text="${user.id}"></td>
+           <td th:text="${user.name}"></td>
+           <td th:text="${user.age}"></td>
+           <td th:text="${user.sex}"></td>
+       </tr>
+
+   </table>
+
+</body>
+</html>
